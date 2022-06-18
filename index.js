@@ -17,7 +17,7 @@ app.use(express.json())
 dotenv.config()
 db()
 
-/* const whiteList = [process.env.FRONTEND_URL]
+const whiteList = [process.env.FRONTEND_URL]
 
 const corsOptions = {
     origin: function (origin, callback) {
@@ -27,7 +27,7 @@ const corsOptions = {
     }
 }
 
-app.use(cors(corsOptions)) */
+app.use(cors(corsOptions))
 
 // Routing
 app.use('/api/project', projectRouter)
