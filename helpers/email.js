@@ -46,12 +46,12 @@ export const sendForgotPasswordEmail = async data => {
         subject: 'UpTask - Reestablece tu Contraseña',
         text: 'Reestablece tu contraseña en UpTask',
         html: `
-            <p>Hola ${name}, has solicitado reestablecer tu contraseña en UpTask</p>
+            <p>Hola ${name}, has solicitado restablecer tu contraseña en UpTask</p>
             <p>Sigue el siguiente enlace para generar una nueva contraseña:</p>
 
             <a href="${process.env.FRONTEND_URL}/forgot-password/${token}">Reestablecer contraseña</a>
 
-            <p>Si no has solicitado reestablecer tu contraseña en UpTask, puedes ignorar este email.</p>
+            <p>Si no has solicitado restablecer tu contraseña en UpTask, puedes ignorar este email.</p>
       `
     })
 }

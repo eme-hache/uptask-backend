@@ -6,17 +6,28 @@ import cors from 'cors'
 import projectRouter from './routes/project.routes.js'
 import tastkRouter from './routes/task.routes.js'
 import userRouter from './routes/user.routes.js'
-import corsOptions from './config/cors.js'
+/* import corsOptions from './config/cors.js' */
 import db from './config/db.js'
 
 // Initializing express app
 const app = express()
 
 // Server configuration
-app.use(cors(corsOptions))
 app.use(express.json())
 dotenv.config()
 db()
+
+const whiteList = [process.env.FRONTEND_URL]
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whiteList.includes(origin)) {
+            callback(null, true)
+        }
+    }
+}
+
+app.use(cors(corsOptions))
 
 // Routing
 app.use('/api/project', projectRouter)

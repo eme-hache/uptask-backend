@@ -18,7 +18,7 @@ router.get('/confirm/:token', confirmUser)
 router.get('/check-token/:token', checkToken)
 
 router.post('/', signUp)
-router.post('/login', signIn)
+router.post('/signin', signIn)
 router.post('/forgot-password', forgotPassword)
 router.post('/forgot-password/:token', resetPassword)
 
