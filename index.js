@@ -40,9 +40,10 @@ const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
 
+console.log(process.env.FRONTEND_URL)
+
 // Socket.io configuration
 const io = new Server(server, {
-    pingTimeout: 60000,
     cors: {
         origin: process.env.FRONTEND_URL
     }
