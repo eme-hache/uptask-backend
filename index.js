@@ -49,7 +49,8 @@ const io = new Server(server, {
         methods: ["GET", "POST"],
         allowedHeaders: ['Access-Control-Allow-Origin'],
         credentials: false
-    }
+    },
+    transports: ['websocket']
 })
 
 // Socket.io sockets configuration
